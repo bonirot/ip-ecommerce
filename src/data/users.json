@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Julia Sanchis",
+    "username": "jsanchis",
+    "mail": "jusanchis@example.com",
+    "password": "quierodormir",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Dani Sanguino",
+    "username": "sanguineta",
+    "mail": "sanguineta@example.com",
+    "password": "iloveborderradius",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Maria Cidoncha",
+    "username": "cidonchat",
+    "mail": "janesmith@example.com",
+    "password": "tengohambre",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Jorge Revuelta",
+    "username": "jorgerc",
+    "mail": "jdaltonico@example.com",
+    "password": "vivazaragoza7",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Paula Wilshaw",
+    "username": "paulawil",
+    "mail": "paulawil@example.com",
+    "password": "mencantajere",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Alberto Otero",
+    "username": "albotero",
+    "mail": "aoteron@example.com",
+    "password": "ahoravoy",
+    "cart": [],
+    "wishlist": []
+  },
+  {
+    "name": "Alba Martin",
+    "username": "albam",
+    "mail": "aoteron@example.com",
+    "password": "nopuedomas",
+    "cart": [],
+    "wishlist": []
+  }
+]
