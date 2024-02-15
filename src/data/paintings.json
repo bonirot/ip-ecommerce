@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Vermillon",
+    "img": "src/assets/vermillon.png",
+    "year": 2019,
+    "author": {
+      "name": "Andrea Torres Balaguer",
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona.",
+      "authorimg": "fotodeandrea.jpg"
+    },
+    "price": 2500
+  },
+  {
+    "id": 2,
+    "name": "Poème Jaune",
+    "img": "src/assets/jeune.png",
+    "year": 2019,
+    "author": {
+      "name": "Andrea Torres Balaguer",
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona.",
+      "authorimg": "fotodeandrea.jpg"
+    },
+    "price": 2500
+  },
+  {
+    "id": 3,
+    "name": "Sketch",
+    "img": "src/assets/sketch.png",
+    "year": 2019,
+    "author": {
+      "name": "Nicole Rifkin",
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA.",
+      "authorimg": "fotonicole.jpg"
+    },
+    "price": 1000
+  },
+  {
+    "id": 4,
+    "name": "Skies",
+    "img": "src/assets/skies.png",
+    "year": 2019,
+    "author": {
+      "name": "Nicole Rifkin",
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA.",
+      "authorimg": "fotonicole.jpg"
+    },
+    "price": 1000
+  },
+  {
+    "id": 5,
+    "name": "Diablo",
+    "img": "src/assets/diablo.png",
+    "year": 2019,
+    "author": {
+      "name": "Mugre",
+      "authordescription": "Spain. ",
+      "authorimg": "fotomugre.jpg",
+      "price": 500
+    }
+  },
+  {
+    "id": 6,
+    "name": "Ego Death",
+    "img": "src/assets/egodeath.png",
+    "year": "2023",
+    "author": {
+      "name": "lacabezaenlasnubes",
+      "authordescription": "Spain. His work is inspired by his early fondness on surrealism and psychedelia. The 'normal' perception of things has long ceased to interest him. He firmly believes that what we perceive through our senses is only the tip of the iceberg.",
+      "authorimg": "fotoautor.jpg"
+    },
+    "price": 500
+  }
+]

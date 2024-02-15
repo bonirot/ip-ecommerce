@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   id: number;
   name: string;
   img: string;
@@ -7,7 +7,7 @@ interface Product {
   price: number;
 }
 
-interface Author {
+export interface Author {
   name: string;
   authordescription: string;
   authorimg: string;

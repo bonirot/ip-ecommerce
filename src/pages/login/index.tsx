@@ -1,4 +1,6 @@
+import { FormEvent, useEffect, useRef, useState } from "react";
 import "./signin.css";
+import { User } from "../../interfaces/user";
 
 export function LogoApp() {
   return (
@@ -12,19 +14,76 @@ export function LogoApp() {
   );
 }
 
+async function getUserData() {
+  try {
+    //VAMOS A LLAMAR A LA API DEL ORTO
+    const data = await fetch("src/data/users.json");
+    const JSONdata = await data.json();
+    return JSONdata;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export function SignIn() {
+  //el useEffect es un mijita y no le gustan los async, así que hay que meter OTRA función para poder poner el async
+
+  const [users, setUsers] = useState([] as User[]);
+
+  useEffect(() => {
+    async function dataUsers() {
+      const allUsersData = await getUserData();
+      setUsers(allUsersData);
+    }
+    dataUsers();
+  }, []);
+  function validateForm(ev: FormEvent) {
+    ev.preventDefault();
+    const userData = ev.target; //se usa para pillar el formulario (el evento)
+    const inputMail = userData.inputMail.value;
+    const inputPass = userData.inputPass.value;
+
+    //vamos a traer los daticos
+    const userFound = users.find(
+      (element) => inputMail === element.mail && inputPass === element.password
+    );
+
+    if (userFound) {
+      alert("JELEEEEE");
+    } else {
+      alert("péinate");
+    }
+  }
+
   return (
     <div className="containerSignIn">
       <h3 className="signInTitle">Sign in</h3>
-      <div className="inputdiv">
-        <img className="logIco" src="./src/assets/user-filled.webp" />
-        <input className="inputSignIn" placeholder="email" />
-      </div>
-      <div className="inputdiv">
-        <img className="logIco" src="./src/assets/key.webp" />
-        <input className="inputSignIn" placeholder="password" />
-      </div>
-      <button className="signInBtn">Sign in!</button>
+      <form className="form" onSubmit={validateForm}>
+        <div className="inputdiv">
+          <img className="logIco" src="./src/assets/user-filled.webp" />
+          <input
+            id="email"
+            type="email"
+            name="inputMail"
+            className="inputSignIn"
+            autoComplete="off"
+            placeholder="email"
+            required
+          />
+        </div>
+        <div className="inputdiv">
+          <img className="logIco" src="./src/assets/key.webp" />
+          <input
+            id="pass"
+            type="password"
+            name="inputPass"
+            className="inputSignIn"
+            placeholder="password"
+            required
+          />
+        </div>
+        <button className="signInBtn">Sign in!</button>
+      </form>
     </div>
   );
 }
