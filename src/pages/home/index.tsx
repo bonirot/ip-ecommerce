@@ -1,5 +1,7 @@
 import "./home.css";
 import { Product } from "../../interfaces/productinfo";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 async function getPaintingsData() {
   try {
@@ -19,7 +21,25 @@ export function ProductCards() {
     <div className="productCard">
       <div className="productDiv">
         <img className="productImg" src="src/assets/vermillon.png" />
-        <h4 className="productDescript">Andrea Torres Balaguer</h4>
+        <h5 className="productDescript">Andrea Torres Balaguer</h5>
+        <p className="productDescript">Vermillon</p>
+        <p className="productDescript price">2.500€</p>
+      </div>
+      <div className="productDiv">
+        <img className="productImg" src="src/assets/vermillon.png" />
+        <h5 className="productDescript">Andrea Torres Balaguer</h5>
+        <p className="productDescript">Vermillon</p>
+        <p className="productDescript price">2.500€</p>
+      </div>
+      <div className="productDiv">
+        <img className="productImg" src="src/assets/vermillon.png" />
+        <h5 className="productDescript">Andrea Torres Balaguer</h5>
+        <p className="productDescript">Vermillon</p>
+        <p className="productDescript price">2.500€</p>
+      </div>
+      <div className="productDiv">
+        <img className="productImg" src="src/assets/vermillon.png" />
+        <h5 className="productDescript">Andrea Torres Balaguer</h5>
         <p className="productDescript">Vermillon</p>
         <p className="productDescript price">2.500€</p>
       </div>
@@ -30,7 +50,9 @@ export function ProductCards() {
 export function Home() {
   return (
     <main>
+      <Header />
       <ProductCards />
+      <Footer />
     </main>
   );
 }

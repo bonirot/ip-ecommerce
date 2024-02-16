@@ -2,24 +2,29 @@
   margin: 0;
   padding: 0;
 }
+
+main {
+  background-color: white;
+}
+
 .productCard {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  gap: 0.3rem;
-  border: 3px solid red;
+  justify-content: center;
+  gap: 1rem;
+  /* border: 3px solid red; */
 }
 .productDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 12rem;
-  margin-top: 0.5rem;
+  width: 11rem;
+  margin-top: 1rem;
   /* width: 10.3rem; */
   /* height: 12.3rem; */
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .productImg {
@@ -27,6 +32,7 @@
   justify-content: center;
   align-items: center;
   width: 9rem;
+  margin-bottom: 0.5rem;
   object-fit: cover;
 }
 

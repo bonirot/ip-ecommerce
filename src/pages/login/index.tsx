@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./signin.css";
 import { User } from "../../interfaces/user";
 
@@ -37,7 +37,7 @@ export function SignIn() {
     }
     dataUsers();
   }, []);
-  function validateForm(ev: FormEvent) {
+  function validateForm(ev: React.ChangeEvent<HTMLFormElement>) {
     ev.preventDefault();
     const userData = ev.target; //se usa para pillar el formulario (el evento)
     const inputMail = userData.inputMail.value;
@@ -56,34 +56,37 @@ export function SignIn() {
   }
 
   return (
-    <div className="containerSignIn">
-      <h3 className="signInTitle">Sign in</h3>
-      <form className="form" onSubmit={validateForm}>
-        <div className="inputdiv">
-          <img className="logIco" src="./src/assets/user-filled.webp" />
-          <input
-            id="email"
-            type="email"
-            name="inputMail"
-            className="inputSignIn"
-            autoComplete="off"
-            placeholder="email"
-            required
-          />
-        </div>
-        <div className="inputdiv">
-          <img className="logIco" src="./src/assets/key.webp" />
-          <input
-            id="pass"
-            type="password"
-            name="inputPass"
-            className="inputSignIn"
-            placeholder="password"
-            required
-          />
-        </div>
-        <button className="signInBtn">Sign in!</button>
-      </form>
-    </div>
+    <section className="mainpage">
+      <LogoApp />
+      <div className="containerSignIn">
+        <h3 className="signInTitle">Sign in</h3>
+        <form className="form" onSubmit={validateForm}>
+          <div className="inputdiv">
+            <img className="logIco" src="./src/assets/user-filled.webp" />
+            <input
+              id="email"
+              type="email"
+              name="inputMail"
+              className="inputSignIn"
+              autoComplete="off"
+              placeholder="email"
+              required
+            />
+          </div>
+          <div className="inputdiv">
+            <img className="logIco" src="./src/assets/key.webp" />
+            <input
+              id="pass"
+              type="password"
+              name="inputPass"
+              className="inputSignIn"
+              placeholder="password"
+              required
+            />
+          </div>
+          <button className="signInBtn">Sign in!</button>
+        </form>
+      </div>
+    </section>
   );
 }
