@@ -5,11 +5,7 @@ import { User } from "../../interfaces/user";
 export function LogoApp() {
   return (
     <div>
-      <img
-        className="logo"
-        src="./src/assets/logowhite.webp"
-        alt="Logo Gappllery"
-      />
+      <img className="logo" src="./src/assets/logog.png" alt="Logo Gappllery" />
     </div>
   );
 }

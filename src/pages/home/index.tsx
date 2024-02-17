@@ -20,25 +20,25 @@ export function ProductCards() {
   return (
     <div className="productCard">
       <div className="productDiv">
-        <img className="productImg" src="src/assets/vermillon.png" />
+        <img className="productImg" src="src/assets/vermillon.webp" />
         <h5 className="productDescript">Andrea Torres Balaguer</h5>
         <p className="productDescript">Vermillon</p>
         <p className="productDescript price">2.500€</p>
       </div>
       <div className="productDiv">
-        <img className="productImg" src="src/assets/vermillon.png" />
+        <img className="productImg" src="src/assets/vermillon.webp" />
         <h5 className="productDescript">Andrea Torres Balaguer</h5>
         <p className="productDescript">Vermillon</p>
         <p className="productDescript price">2.500€</p>
       </div>
       <div className="productDiv">
-        <img className="productImg" src="src/assets/vermillon.png" />
+        <img className="productImg" src="src/assets/vermillon.webp" />
         <h5 className="productDescript">Andrea Torres Balaguer</h5>
         <p className="productDescript">Vermillon</p>
         <p className="productDescript price">2.500€</p>
       </div>
       <div className="productDiv">
-        <img className="productImg" src="src/assets/vermillon.png" />
+        <img className="productImg" src="src/assets/vermillon.webp" />
         <h5 className="productDescript">Andrea Torres Balaguer</h5>
         <p className="productDescript">Vermillon</p>
         <p className="productDescript price">2.500€</p>

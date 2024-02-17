@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Vermillon",
-    "img": "src/assets/vermillon.png",
+    "img": "src/assets/vermillon.webp",
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Poème Jaune",
-    "img": "src/assets/jeune.png",
+    "img": "src/assets/jeune.webp",
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Sketch",
-    "img": "src/assets/sketch.png",
+    "img": "src/assets/sketch.webp",
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Skies",
-    "img": "src/assets/skies.png",
+    "img": "src/assets/skies.webp",
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
@@ -50,11 +50,11 @@
   {
     "id": 5,
     "name": "Diablo",
-    "img": "src/assets/diablo.png",
+    "img": "src/assets/diablo.webp",
     "year": 2019,
     "author": {
       "name": "Mugre",
-      "authordescription": "Spain. ",
+      "authordescription": "Spain. Mid-century enthusiast graphic designer whose work centres around portraits.",
       "authorimg": "fotomugre.jpg",
       "price": 500
     }
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Ego Death",
-    "img": "src/assets/egodeath.png",
+    "img": "src/assets/egodeath.webp",
     "year": "2023",
     "author": {
       "name": "lacabezaenlasnubes",
