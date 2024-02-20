@@ -6,8 +6,7 @@
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
-      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona.",
-      "authorimg": "fotodeandrea.jpg"
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona."
     },
     "price": 2500
   },
@@ -18,8 +17,7 @@
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
-      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona.",
-      "authorimg": "fotodeandrea.jpg"
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona."
     },
     "price": 2500
   },
@@ -30,8 +28,7 @@
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
-      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA.",
-      "authorimg": "fotonicole.jpg"
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA."
     },
     "price": 1000
   },
@@ -42,8 +39,7 @@
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
-      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA.",
-      "authorimg": "fotonicole.jpg"
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA."
     },
     "price": 1000
   },
@@ -54,10 +50,9 @@
     "year": 2019,
     "author": {
       "name": "Mugre",
-      "authordescription": "Spain. Mid-century enthusiast graphic designer whose work centres around portraits.",
-      "authorimg": "fotomugre.jpg",
-      "price": 500
-    }
+      "authordescription": "Spain. Mid-century enthusiast graphic designer whose work centres around portraits."
+    },
+    "price": 500
   },
   {
     "id": 6,
@@ -66,8 +61,7 @@
     "year": "2023",
     "author": {
       "name": "lacabezaenlasnubes",
-      "authordescription": "Spain. His work is inspired by his early fondness on surrealism and psychedelia. The 'normal' perception of things has long ceased to interest him. He firmly believes that what we perceive through our senses is only the tip of the iceberg.",
-      "authorimg": "fotoautor.jpg"
+      "authordescription": "Spain. His work is inspired by his early fondness on surrealism and psychedelia. The 'normal' perception of things has long ceased to interest him. He firmly believes that what we perceive through our senses is only the tip of the iceberg."
     },
     "price": 500
   }

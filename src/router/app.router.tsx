@@ -1,15 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Home, ProductCards } from "../pages/home";
+import { Home } from "../pages/home";
 import { SignIn } from "../pages/login";
 import { Cart } from "../pages/cart";
+import { ProductPage } from "../pages/product";
 
-const AppRoutes = () => {
+type Props = {};
+
+const AppRoutes = ({}: Props) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/productpage" element={<ProductCards />} />
+        <Route path="/productpage" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

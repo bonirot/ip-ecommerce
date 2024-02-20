@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./signin.css";
 import { User } from "../../interfaces/user";
+import { useNavigate } from "react-router-dom";
 
 export function LogoApp() {
   return (
@@ -25,6 +26,7 @@ export function SignIn() {
   //el useEffect es un mijita y no le gustan los async, así que hay que meter OTRA función para poder poner el async
 
   const [users, setUsers] = useState([] as User[]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function dataUsers() {
@@ -45,7 +47,8 @@ export function SignIn() {
     );
 
     if (userFound) {
-      alert("JELEEEEE");
+      setUsers(users);
+      navigate("/home");
     } else {
       alert("péinate");
     }

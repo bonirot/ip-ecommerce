@@ -5,9 +5,32 @@ footer {
   height: 7%;
   display: flex;
   gap: 8%;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--indigo);
   border-radius: 0.7rem 0.7rem 0 0;
   margin-top: auto;
+}
+
+.addBtn {
+  border: none;
+  background-color: var(--gold);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.addBtn:active {
+  background-color: white;
+  color: black;
+}
+
+.footerwebp {
+  display: flex;
+  flex-direction: row;
+  width: 2rem;
+}
+
+.footerBtn {
+  border: none;
+  background: none;
 }

@@ -1,5 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
 
-body {
-  background-color: #e6e4dd;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.paintingCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  /* border: 3px solid red; */
+}
+
+.paintingDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  margin: 2rem;
+}
+
+.paintingImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+.paintingDescript {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0.2rem; */
+}
+
+.price {
+  color: var(--gold);
+}
+
+.aboutAuthor {
+  margin: 1rem;
+  font-size: smaller;
+  border: 0.2rem solid var(--gold);
+  padding: 1rem;
+  border-radius: 0.3rem;
 }
