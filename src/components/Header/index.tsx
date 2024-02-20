@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./header.css";
-import { userNameCtxt } from "../../context/userctxt/user";
+import { userNameCtxt } from "../../context/userctxt";
 
 // type Props = {};
 

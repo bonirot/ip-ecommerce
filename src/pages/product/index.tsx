@@ -1,10 +1,13 @@
 import "./product.css";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
+import { Product } from "../../interfaces/productinfo";
+import { usePaintingsContext } from "../../context/paitingsctxt";
+import { useParams } from "react-router-dom";
 
-// const [products, setProducts] = useState([] as Product[]);
+type Props = {};
 
-export function ProductPage() {
+export function ProductPage({}: Props) {
   return (
     <>
       <Header />
@@ -16,18 +19,27 @@ export function ProductPage() {
   );
 }
 
-export function ProductDescription() {
+export function ProductDescription({}: Props) {
+  const { productId } = useParams();
+  const paintingctxt = usePaintingsContext();
+
+  const showPainting = paintingctxt.paintings.find((element) => {
+    console.log(typeof element.id.toString(), typeof productId);
+    return element.id.toString() === productId;
+  });
   return (
     <>
       <div className="paintingDiv">
-        <img className="paintingImg" src="src/assets/vermillon.webp" />
-        <h3 className="paintingDescript">Andrea Torres Balaguer</h3>
-        <p className="paintingDescript">Vermillon (2019)</p>
-        <p className="paintingDescript price">2.500€</p>
+        <img className="paintingImg" src={showPainting?.img} />
+        <h3 className="paintingDescript">{showPainting?.author.name}</h3>
+        <p className="paintingDescript">
+          {showPainting?.name} {showPainting?.year}
+        </p>
+        <p className="paintingDescript price">{showPainting?.price}€</p>
       </div>
       <div className="aboutAuthor">
         <h3>About the author:</h3>
-        <p>Barcelona, 1990. Fine Arts Degree at University of Barcelona.</p>
+        <p>{showPainting?.author.authordescription}</p>
       </div>
     </>
   );
