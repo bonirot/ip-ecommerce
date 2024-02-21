@@ -1,52 +1,27 @@
-import { createContext } from "react";
+import { createContext, useState, useContext } from "react";
+import { Outlet } from "react-router-dom";
+import { User } from "../../interfaces/user";
 
-export const userNameCtxt = createContext(null);
+export interface UserContextType {
+  user: User;
+  setUser: Function;
+}
 
-export const UserProvider = ({ children }) => {
-  const dataUser = {
-    name: "Lujulia",
-    mail: "jusanchis@example.com",
-  };
+export const userContext = createContext({} as UserContextType);
+
+export const UsersContextProvider = () => {
+  const [user, setUser] = useState({} as User);
   return (
-    <userNameCtxt.Provider value={dataUser.name}>
-      {children}
-    </userNameCtxt.Provider>
+    <userContext.Provider value={{ user, setUser }}>
+      {<Outlet />}
+    </userContext.Provider>
   );
 };
 
-// import React, { createContext, useContext, useState } from "react";
-
-// // interface JSONDataContextProps {
-// //   data: any;
-// //   setData: React.Dispatch<React.SetStateAction<any>>;
-// // }
-// interface User {
-//   name: string;
-//   username: string;
-//   mail: string;
-//   password: string;
-//   cart: [];
-//   wishlist: [];
-// }
-
-// const USERDataContext = createContext<User | undefined>(undefined);
-
-// export const useUSERDataContext = () => {
-//   const context = useContext(USERDataContext);
-//   if (!context) {
-//     throw new Error(
-//       "useJSONDataContext debe usarse dentro de un proveedor JSONDataContext"
-//     );
-//   }
-//   return context;
-// };
-
-// export const JSONDataProvider: React.FC = ({ children }) => {
-//   const [data, setData] = useState<any>(null);
-
-//   return (
-//     <USERDataContext.Provider value={{ data, setData }}>
-//       {children}
-//     </USERDataContext.Provider>
-//   );
-// };
+export function useUsersContext() {
+  const context = useContext(userContext);
+  if (!context) {
+    throw new Error("Error");
+  }
+  return context;
+}

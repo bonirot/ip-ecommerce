@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./signin.css";
 import { User } from "../../interfaces/user";
 import { useNavigate } from "react-router-dom";
+import { useUsersContext } from "../../context/userctxt";
 
 export function LogoApp() {
   return (
@@ -24,7 +25,7 @@ async function getUserData() {
 
 export function SignIn() {
   //el useEffect es un mijita y no le gustan los async, así que hay que meter OTRA función para poder poner el async
-
+  const userctxt = useUsersContext();
   const [users, setUsers] = useState([] as User[]);
   const navigate = useNavigate();
 
@@ -35,6 +36,7 @@ export function SignIn() {
     }
     dataUsers();
   }, []);
+
   function validateForm(ev: React.ChangeEvent<HTMLFormElement>) {
     ev.preventDefault();
     const userData = ev.target; //se usa para pillar el formulario (el evento)
@@ -47,8 +49,8 @@ export function SignIn() {
     );
 
     if (userFound) {
-      setUsers(users);
       navigate("/home");
+      userctxt.setUser(userFound);
     } else {
       alert("péinate");
     }

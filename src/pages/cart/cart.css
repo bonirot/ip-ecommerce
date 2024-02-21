@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.allItems {
+  display: flex;
+  margin: 1rem 1.5rem 2rem 1.5rem;
+  border: 2px solid var(--dark-green);
+}
+
+.imgContainer {
+  display: flex;
+}
+
+.cartImg {
+  width: 8rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 1rem;
+}
+
+.itemInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 11.5rem;
+  /* border: 1px solid red; */
+}
+
+.cartTitle {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  color: var(--dark-green);
+}

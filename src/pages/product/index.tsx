@@ -1,7 +1,6 @@
 import "./product.css";
 import Footer from "../../components/footer";
-import Header from "../../components/header";
-import { Product } from "../../interfaces/productinfo";
+import { Header } from "../../components/header";
 import { usePaintingsContext } from "../../context/paitingsctxt";
 import { useParams } from "react-router-dom";
 
@@ -24,16 +23,20 @@ export function ProductDescription({}: Props) {
   const paintingctxt = usePaintingsContext();
 
   const showPainting = paintingctxt.paintings.find((element) => {
-    console.log(typeof element.id.toString(), typeof productId);
+    // console.log(typeof element.id.toString(), typeof productId);
     return element.id.toString() === productId;
   });
   return (
     <>
       <div className="paintingDiv">
-        <img className="paintingImg" src={showPainting?.img} />
+        <img
+          className="paintingImg"
+          src={showPainting?.img}
+          alt="Painting: Ego Death"
+        />
         <h3 className="paintingDescript">{showPainting?.author.name}</h3>
         <p className="paintingDescript">
-          {showPainting?.name} {showPainting?.year}
+          {showPainting?.name} ({showPainting?.year})
         </p>
         <p className="paintingDescript price">{showPainting?.price}€</p>
       </div>
@@ -41,6 +44,14 @@ export function ProductDescription({}: Props) {
         <h3>About the author:</h3>
         <p>{showPainting?.author.authordescription}</p>
       </div>
+      <button className="addBtn">
+        <img
+          className="wishlistBtn"
+          src="src/assets/heart-black.webp"
+          alt="Add to woshlist"
+        />
+      </button>
+      <button className="addBtn">Add to cart</button>
     </>
   );
 }

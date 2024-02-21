@@ -1,19 +1,19 @@
-import { useContext } from "react";
 import "./header.css";
-import { userNameCtxt } from "../../context/userctxt";
+import { useUsersContext } from "../../context/userctxt";
 
-// type Props = {};
+type Props = {};
 
-function Header() {
-  const userHeader = useContext(userNameCtxt);
+export function Header({}: Props) {
+  const userctxt = useUsersContext();
+
   return (
-    <header>
-      <button className="headerBtn">
-        <img className="userwebp" src="src/assets/user-filled.webp"></img>
-      </button>
-      <h5 className="printedName">Hello, {userHeader}!</h5>
-    </header>
+    <>
+      <header>
+        <button className="headerBtn">
+          <img className="userwebp" src="src/assets/user-filled.webp" />
+        </button>
+        <h5 className="printedName">Hello, {userctxt.user.name}!</h5>
+      </header>
+    </>
   );
 }
-
-export default Header;
