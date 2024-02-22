@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./signin.css";
-import { User } from "../../interfaces/user";
+import { useAuthDispatch } from "../../context/authctxt";
 import { useNavigate } from "react-router-dom";
+import { User } from "../../interfaces/user";
 import { useUsersContext } from "../../context/userctxt";
 
 export function LogoApp() {
@@ -24,9 +25,10 @@ async function getUserData() {
 }
 
 export function SignIn() {
-  //el useEffect es un mijita y no le gustan los async, así que hay que meter OTRA función para poder poner el async
   const userctxt = useUsersContext();
   const [users, setUsers] = useState([] as User[]);
+  const [userData, setUserData] = useState({ usermail: "", password: "" });
+  const dispatch = useAuthDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -37,22 +39,25 @@ export function SignIn() {
     dataUsers();
   }, []);
 
-  function validateForm(ev: React.ChangeEvent<HTMLFormElement>) {
-    ev.preventDefault();
-    const userData = ev.target; //se usa para pillar el formulario (el evento)
-    const inputMail = userData.inputMail.value;
-    const inputPass = userData.inputPass.value;
+  function handleLogin() {
+    dispatch({ type: "LOGIN" });
+    navigate("/home");
+  }
 
-    //vamos a traer los daticos
+  function validateForm(ev: React.FormEvent<HTMLFormElement>) {
+    ev.preventDefault();
+
+    const { usermail, password } = userData;
+
     const userFound = users.find(
-      (element) => inputMail === element.mail && inputPass === element.password
+      (element) => usermail === element.mail && password === element.password
     );
 
     if (userFound) {
-      navigate("/home");
+      handleLogin();
       userctxt.setUser(userFound);
     } else {
-      alert("péinate");
+      alert("Usuario o contraseña incorrectos");
     }
   }
 
@@ -63,29 +68,47 @@ export function SignIn() {
         <h3 className="signInTitle">Sign in</h3>
         <form className="form" onSubmit={validateForm}>
           <div className="inputdiv">
-            <img className="logIco" src="./src/assets/user-filled.webp" />
+            <img
+              className="logIco"
+              src="./src/assets/user-filled.webp"
+              alt="User icon"
+            />
             <input
               id="email"
               type="email"
               name="inputMail"
               className="inputSignIn"
               autoComplete="off"
+              value={userData.usermail}
+              onChange={(e) =>
+                setUserData({ ...userData, usermail: e.target.value })
+              }
               placeholder="email"
               required
             />
           </div>
           <div className="inputdiv">
-            <img className="logIco" src="./src/assets/key.webp" />
+            <img
+              className="logIco"
+              src="./src/assets/key.webp"
+              alt="Key icon"
+            />
             <input
               id="pass"
               type="password"
               name="inputPass"
               className="inputSignIn"
+              value={userData.password}
+              onChange={(e) =>
+                setUserData({ ...userData, password: e.target.value })
+              }
               placeholder="password"
               required
             />
           </div>
-          <button className="signInBtn">Sign in!</button>
+          <button className="signInBtn" type="submit">
+            Sign in!
+          </button>
         </form>
       </div>
     </section>

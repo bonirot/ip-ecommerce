@@ -1,32 +1,50 @@
-import React, { createContext, useCallback, useMemo, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 
-const myAuthApp = "myAuthApp";
-
-interface Authentication {
-  isAutheticated: boolean;
+interface AuthState {
+  isAuthenticated: boolean;
 }
+
 type Action = { type: "LOGIN" } | { type: "LOGOUT" };
 type Dispatch = (action: Action) => void;
 
-const AuthContext = createContext<Authentication | undefined>(undefined);
+const AuthStateContext = createContext<AuthState | undefined>(undefined);
 const AuthDispatchContext = createContext<Dispatch | undefined>(undefined);
 
-const authReducer = (state: Authentication, action: Action): Authentication => {
-  switch(action.type){
-    case 'LOGIN':
-      return {isAutheticated: true}
+const authReducer = (state: AuthState, action: Action): AuthState => {
+  switch (action.type) {
+    case "LOGIN":
+      return { isAuthenticated: true };
+    default:
+      return state;
   }
-}
+};
 
-const AuthContextProvider = ({ children }:{children: React.ReactNode}) => {
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const [state, dispatch] = useReducer(authReducer, { isAuthenticated: false });
 
-  const [state, dispatch] = useReducer(REDUCE {isAuthenticated: false});
+  return (
+    <AuthStateContext.Provider value={state}>
+      <AuthDispatchContext.Provider value={dispatch}>
+        {children}
+      </AuthDispatchContext.Provider>
+    </AuthStateContext.Provider>
+  );
+};
 
-return(
-  <AuthContext.Provider value={state}>
-    <AuthDispatchContext.Provider value={dispatch}>
-      {children}
-    </AuthDispatchContext.Provider>
-  </AuthContext.Provider>
-)
-}
+const useAuthState = () => {
+  const context = useContext(AuthStateContext);
+  if (context === undefined) {
+    throw new Error("useAuthState must be used within an AuthProvider");
+  }
+  return context;
+};
+
+const useAuthDispatch = () => {
+  const context = useContext(AuthDispatchContext);
+  if (context === undefined) {
+    throw new Error("useAuthDispatch must be used within an AuthProvider");
+  }
+  return context;
+};
+
+export { AuthProvider, useAuthState, useAuthDispatch };

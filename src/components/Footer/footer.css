@@ -22,3 +22,9 @@ footer {
   border: none;
   background: none;
 }
+
+.footerBtn:focus {
+  border: 0.05rem solid var(--gold);
+  border-radius: 1rem;
+  background-color: var(--gold);
+}
