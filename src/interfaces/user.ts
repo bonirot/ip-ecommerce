@@ -3,6 +3,11 @@ export interface User {
   username: string;
   mail: string;
   password: string;
-  cart: [];
+  cart: Cart[];
   wishlist: [];
+}
+
+interface Cart {
+  id: number;
+  quantity: number;
 }

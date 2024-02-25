@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { usePaintingsContext } from "../../context/paitingsctxt";
+import { formatCurrency } from "../../utilities/formarCurrency";
 
 type Props = {};
 
@@ -52,7 +53,9 @@ export function ProductCards({}: Props) {
               <p className="productDescript">
                 {product.name}({product.year})
               </p>
-              <p className="productDescript price">{product.price}€</p>
+              <p className="productDescript price">
+                {formatCurrency(product.price)}
+              </p>
             </div>
           </Link>
         );

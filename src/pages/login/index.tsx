@@ -57,7 +57,7 @@ export function SignIn() {
       handleLogin();
       userctxt.setUser(userFound);
     } else {
-      alert("Usuario o contraseña incorrectos");
+      alert("Incorrect email or password");
     }
   }
 

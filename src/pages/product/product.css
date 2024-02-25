@@ -51,7 +51,8 @@
   border-radius: 0.3rem;
 }
 
-.addBtn {
+.addBtn,
+.heartBtn {
   border: none;
   background-color: var(--gold);
   padding: 0.6rem;
@@ -62,6 +63,10 @@
 .addBtn:active {
   background-color: var(--dark-green);
   color: white;
+}
+
+.heartBtn {
+  margin-right: 4rem;
 }
 
 .wishlistBtn {

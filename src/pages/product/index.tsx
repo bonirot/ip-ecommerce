@@ -3,6 +3,7 @@ import Footer from "../../components/footer";
 import { Header } from "../../components/header";
 import { usePaintingsContext } from "../../context/paitingsctxt";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 type Props = {};
 
@@ -19,11 +20,11 @@ export function ProductPage({}: Props) {
 }
 
 export function ProductDescription({}: Props) {
-  const { productId } = useParams();
+  const { productId } = useParams(); //To implement a dynamic path for each product page
   const paintingctxt = usePaintingsContext();
+  const [count, setCount] = useState(1); //To set a quantity counter
 
   const showPainting = paintingctxt.paintings.find((element) => {
-    // console.log(typeof element.id.toString(), typeof productId);
     return element.id.toString() === productId;
   });
   return (
@@ -44,11 +45,30 @@ export function ProductDescription({}: Props) {
         <h3>About the author:</h3>
         <p>{showPainting?.author.authordescription}</p>
       </div>
-      <button className="addBtn">
+      <button className="heartBtn">
         <img
           className="wishlistBtn"
           src="src/assets/heart-black.webp"
           alt="Add to woshlist"
+        />
+      </button>
+      <button
+        className="addremoveBtn"
+        onClick={() => setCount((prevState) => prevState - 1)}
+      >
+        <img
+          className="addremoveImg"
+          src="src/assets/square-minus-filled.webp"
+        />
+      </button>
+      <p className="quantity">{count}</p>
+      <button
+        className="addremoveBtn"
+        onClick={() => setCount((prevState) => prevState + 1)}
+      >
+        <img
+          className="addremoveImg"
+          src="src/assets/square-mayus-filled.webp"
         />
       </button>
       <button className="addBtn">Add to cart</button>

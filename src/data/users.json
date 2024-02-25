@@ -4,48 +4,58 @@
     "username": "jsanchis",
     "mail": "jusanchis@example.com",
     "password": "quierodormir",
-    "cart": []
+    "cart": [
+      { "id": 1, "quantity": 1 },
+      { "id": 3, "quantity": 2 }
+    ],
+    "whishlist": []
   },
   {
     "name": "Dani Sanguino",
     "username": "sanguineta",
     "mail": "sanguineta@example.com",
     "password": "iloveborderradius",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   },
   {
     "name": "Maria Cidoncha",
     "username": "cidonchat",
     "mail": "janesmith@example.com",
     "password": "tengohambre",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   },
   {
     "name": "Jorge Revuelta",
     "username": "jorgerc",
     "mail": "jdaltonico@example.com",
     "password": "vivazaragoza7",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   },
   {
     "name": "Paula Wilshaw",
     "username": "paulawil",
     "mail": "paulawil@example.com",
     "password": "mencantajere",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   },
   {
     "name": "Alberto Otero",
     "username": "albotero",
     "mail": "aoteron@example.com",
     "password": "ahoravoy",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   },
   {
     "name": "Alba Martin",
     "username": "albam",
     "mail": "aoteron@example.com",
     "password": "nopuedomas",
-    "cart": []
+    "cart": [],
+    "whishlist": []
   }
 ]
