@@ -4,10 +4,7 @@
     "username": "jsanchis",
     "mail": "jusanchis@example.com",
     "password": "quierodormir",
-    "cart": [
-      { "id": 1, "quantity": 1 },
-      { "id": 3, "quantity": 2 }
-    ],
+    "cart": [],
     "whishlist": []
   },
   {

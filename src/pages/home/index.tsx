@@ -2,11 +2,8 @@ import "./home.css";
 import { Header } from "../../components/header";
 import Footer from "../../components/footer";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { usePaintingsContext } from "../../context/paitingsctxt";
-import { formatCurrency } from "../../utilities/formarCurrency";
-
-type Props = {};
+import { PaintingsInfo } from "./components/product";
 
 export function Home() {
   return (
@@ -21,7 +18,7 @@ export function Home() {
   );
 }
 
-export function ProductCards({}: Props) {
+export function ProductCards() {
   const paintingctxt = usePaintingsContext();
 
   async function getPaintingsData() {
@@ -42,22 +39,15 @@ export function ProductCards({}: Props) {
     <>
       {paintingctxt.paintings.map((product) => {
         return (
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to={`/${product.id}`}
+          <PaintingsInfo
             key={product.id}
-          >
-            <div className="productDiv">
-              <img className="productImg" src={product.img} />
-              <h5 className="productDescript">{product.author.name}</h5>
-              <p className="productDescript">
-                {product.name}({product.year})
-              </p>
-              <p className="productDescript price">
-                {formatCurrency(product.price)}
-              </p>
-            </div>
-          </Link>
+            id={product.id}
+            name={product.name}
+            img={product.img}
+            author={product.author}
+            price={product.price}
+            year={product.year}
+          />
         );
       })}
     </>

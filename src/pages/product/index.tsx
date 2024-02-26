@@ -4,10 +4,9 @@ import { Header } from "../../components/header";
 import { usePaintingsContext } from "../../context/paitingsctxt";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useUsersContext } from "../../context/userctxt";
 
-type Props = {};
-
-export function ProductPage({}: Props) {
+export function ProductPage() {
   return (
     <>
       <Header />
@@ -19,7 +18,7 @@ export function ProductPage({}: Props) {
   );
 }
 
-export function ProductDescription({}: Props) {
+export function ProductDescription() {
   const { productId } = useParams(); //To implement a dynamic path for each product page
   const paintingctxt = usePaintingsContext();
   const [count, setCount] = useState(1); //To set a quantity counter
@@ -27,6 +26,18 @@ export function ProductDescription({}: Props) {
   const showPainting = paintingctxt.paintings.find((element) => {
     return element.id.toString() === productId;
   });
+
+  const userctxt = useUsersContext().user;
+  const addItemToUserArray = () => {
+    for (let i = 0; i < count; i++) {
+      if (showPainting && userctxt) {
+        userctxt.cart.push(showPainting);
+      }
+      console.log(userctxt.cart);
+      console.log(count);
+    }
+  };
+
   return (
     <>
       <div className="paintingDiv">
@@ -39,7 +50,7 @@ export function ProductDescription({}: Props) {
         <p className="paintingDescript">
           {showPainting?.name} ({showPainting?.year})
         </p>
-        <p className="paintingDescript price">{showPainting?.price}€</p>
+        <p className="paintingDescript price">{showPainting?.price} €</p>
       </div>
       <div className="aboutAuthor">
         <h3>About the author:</h3>
@@ -71,7 +82,9 @@ export function ProductDescription({}: Props) {
           src="src/assets/square-mayus-filled.webp"
         />
       </button>
-      <button className="addBtn">Add to cart</button>
+      <button className="addBtn" onClick={addItemToUserArray}>
+        Add to cart
+      </button>
     </>
   );
 }

@@ -1,13 +1,10 @@
+import { Product } from "./productinfo";
+
 export interface User {
   name: string;
   username: string;
   mail: string;
   password: string;
-  cart: Cart[];
+  cart: Product[];
   wishlist: [];
-}
-
-interface Cart {
-  id: number;
-  quantity: number;
 }
