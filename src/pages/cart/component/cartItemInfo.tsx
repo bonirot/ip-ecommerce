@@ -1,41 +1,47 @@
-import { useState } from "react";
-import { Product } from "../../../interfaces/productinfo";
-import { useUsersContext } from "../../../context/userctxt";
+import { useEffect, useState } from "react";
+import { useCartContext, useUsersContext } from "../../../context/userctxt";
+import { IoTrashOutline } from "react-icons/io5";
 
-type Props = {
-  product: Product | undefined;
-  count: number;
-  renderPrice: Function;
-};
+// type Props = {
+//   product: Product | undefined;
+//   count: number;
+//   renderPrice: Function;
+// };
 
-function CartItemInfo({ product, count, renderPrice }: Props) {
+function CartItemInfo({ product, count, renderPrice }: any) {
   const [counter, setCounter] = useState(count);
-  const loggedUserCart = useUsersContext().user.cart;
+  const { user, setUser } = useUsersContext();
+  const { cartProducts, setCartProducts } = useCartContext();
+  console.log({ cartProducts });
 
+  useEffect(() => {
+    // setCartProducts(cartProducts)
+  }, [counter, cartProducts, user, setUser]);
   // Function to add to cart
 
   const addToUserCart = () => {
-    setCounter((prevState) => prevState + 1);
-    if (loggedUserCart && product) {
-      loggedUserCart.push(product);
+    setCounter((prevState: number) => prevState + 1);
+    if (cartProducts && product) {
+      cartProducts.push(product);
     }
-    console.log(loggedUserCart);
     renderPrice();
   };
 
-  // Function to remove from cart
+  // Function to remove items from cart and make the item disappear when the counter reaches 0 items
 
   const removeFromUserCart = () => {
     if (counter > 0) {
-      setCounter((prevState) => prevState - 1);
+      setCounter((prevState: number) => prevState - 1);
     }
-    if (loggedUserCart && product) {
-      const index = loggedUserCart.findIndex((element) => {
-        element.id === product.id;
+    if (cartProducts && product) {
+      const productItem = cartProducts.filter((element: any) => {
+        const compairProducts = element.id !== product.id;
+        return compairProducts;
       });
-      loggedUserCart.splice(index, 1);
+      setCartProducts(productItem);
+      setUser(user);
+      // console.log(typeof cartProducts);
     }
-    console.log(loggedUserCart);
     renderPrice();
   };
 
@@ -71,11 +77,8 @@ function CartItemInfo({ product, count, renderPrice }: Props) {
                 />
               </button>
 
-              <button className="addremoveBtn" onClick={handleDelete}>
-                <img
-                  className="addremoveImg trash"
-                  src="src/assets/trash.webp"
-                />
+              <button className="addremoveBtn trash" onClick={handleDelete}>
+                <IoTrashOutline size={25} />
               </button>
             </div>
           </div>

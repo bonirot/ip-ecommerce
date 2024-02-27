@@ -5,7 +5,7 @@
 
 .cardItem {
   display: flex;
-  margin: 1rem 1.5rem 2rem 1.5rem;
+  margin: 1rem 1.5rem 1rem 1.5rem;
   border: 2px solid var(--dark-green);
 }
 
@@ -59,8 +59,9 @@
 
 .totalPrice {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cartEmpty {
@@ -69,6 +70,17 @@
   margin: 2rem;
   font-size: 1.5rem;
   color: var(--gold);
-  border: 0.2rem solid var(--dark-green);
+  border-radius: 0.5rem;
+  background-color: var(--dark-green);
   padding: 2rem;
+}
+
+.checkoutBtn {
+  margin: 2rem;
+  border: none;
+  background-color: var(--gold);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
 }

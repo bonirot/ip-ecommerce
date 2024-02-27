@@ -23,7 +23,7 @@ export function ProductCards() {
 
   async function getPaintingsData() {
     try {
-      //VAMOS A LLAMAR A LA API DEL ORTO
+      //Let's make the API call
       const data = await fetch("src/data/paintings.json");
       const JSONdata = await data.json();
       paintingctxt.setPaintings(JSONdata);
@@ -35,6 +35,7 @@ export function ProductCards() {
   useEffect(() => {
     getPaintingsData();
   }, []);
+
   return (
     <>
       {paintingctxt.paintings.map((product) => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useUsersContext } from "../../../context/userctxt";
+import { useCartContext, useUsersContext } from "../../../context/userctxt";
 import CartItemInfo from "./cartItemInfo";
 
 type ProductCount = {
@@ -7,14 +7,14 @@ type ProductCount = {
 };
 
 export function CartItems() {
-  const userCart = useUsersContext().user.cart;
+  const { user } = useUsersContext();
+  const cartProducts = user?.cart;
   const [totalPrice, setTotalPrice] = useState(0);
-
   // Function to calculate total price at Cart
 
   const calculateTotalPrice = () => {
     let price: number = 0;
-    userCart.map((item) => {
+    cartProducts?.map((item: any) => {
       price += item.price;
     });
     setTotalPrice(price);
@@ -23,7 +23,7 @@ export function CartItems() {
   // Function to add quantity and not repeat the product
 
   const productCount: ProductCount = {};
-  userCart.map((item) => {
+  cartProducts?.map((item: any) => {
     const productId: number = item.id;
     productCount[productId] = productCount[productId]
       ? productCount[productId] + 1
@@ -32,28 +32,32 @@ export function CartItems() {
 
   useEffect(() => {
     calculateTotalPrice();
-  }, [userCart]);
+  }, [user, cartProducts]);
 
   return (
     <>
-      {userCart.length === 0 && (
+      {cartProducts === undefined && (
         <h3 className="cartEmpty">The cart is empty! 😢</h3>
       )}
-      {Object.entries(productCount).map(([productId, count]) => {
+
+      {Object.entries(productCount)?.map(([productId, count]) => {
         return (
           <div key={productId}>
             <CartItemInfo
-              renderPrice={calculateTotalPrice}
-              product={userCart.find((item) => String(item.id) === productId)}
+              product={cartProducts.find(
+                (item: any) => String(item.id) === productId
+              )}
               count={count}
+              renderPrice={calculateTotalPrice}
             />
           </div>
         );
       })}
-      {userCart.length > 0 && (
+      {cartProducts !== undefined && (
         <div className="totalPrice">
-          <p>Total:</p>
-          <p>{totalPrice} €</p>
+          <strong>Total: {totalPrice} €</strong>
+          {/* <span>{totalPrice} €</span> */}
+          <button className="checkoutBtn">Checkout</button>
         </div>
       )}
     </>

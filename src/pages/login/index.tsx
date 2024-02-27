@@ -15,7 +15,7 @@ export function LogoApp() {
 
 async function getUserData() {
   try {
-    //VAMOS A LLAMAR A LA API DEL ORTO
+    //Let's make the API call
     const data = await fetch("src/data/users.json");
     const JSONdata = await data.json();
     return JSONdata;
@@ -48,7 +48,6 @@ export function SignIn() {
     ev.preventDefault();
 
     const { usermail, password } = userData;
-
     const userFound = users.find(
       (element) => usermail === element.mail && password === element.password
     );

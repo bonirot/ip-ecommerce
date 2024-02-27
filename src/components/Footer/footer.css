@@ -12,12 +12,6 @@ footer {
   margin-top: auto;
 }
 
-.footerwebp {
-  display: flex;
-  flex-direction: row;
-  width: 2rem;
-}
-
 .footerBtn {
   border: none;
   background: none;

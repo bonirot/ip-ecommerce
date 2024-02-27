@@ -5,6 +5,8 @@ import { usePaintingsContext } from "../../context/paitingsctxt";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useUsersContext } from "../../context/userctxt";
+import { GoHeartFill } from "react-icons/go";
+import toast, { Toaster } from "react-hot-toast";
 
 export function ProductPage() {
   return (
@@ -33,8 +35,6 @@ export function ProductDescription() {
       if (showPainting && userctxt) {
         userctxt.cart.push(showPainting);
       }
-      console.log(userctxt.cart);
-      console.log(count);
     }
   };
 
@@ -57,11 +57,7 @@ export function ProductDescription() {
         <p>{showPainting?.author.authordescription}</p>
       </div>
       <button className="heartBtn">
-        <img
-          className="wishlistBtn"
-          src="src/assets/heart-black.webp"
-          alt="Add to woshlist"
-        />
+        <GoHeartFill size={20} />
       </button>
       <button
         className="addremoveBtn"
@@ -82,9 +78,24 @@ export function ProductDescription() {
           src="src/assets/square-mayus-filled.webp"
         />
       </button>
-      <button className="addBtn" onClick={addItemToUserArray}>
+      <button
+        className="addBtn"
+        onClick={() => {
+          addItemToUserArray();
+          toast("🎉 Painting added successfully!");
+        }}
+      >
         Add to cart
       </button>
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#333",
+            color: "#fff",
+          },
+        }}
+      />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import "./header.css";
 import { useUsersContext } from "../../context/userctxt";
+import { RiUserFill } from "react-icons/ri";
 
 type Props = {};
 
@@ -10,7 +11,7 @@ export function Header({}: Props) {
     <>
       <header>
         <button className="headerBtn">
-          <img className="userwebp" src="src/assets/user-filled.webp" />
+          <RiUserFill size={30} color="white" />
         </button>
         <h5 className="printedName">Hello, {userctxt.user.name}!</h5>
       </header>
