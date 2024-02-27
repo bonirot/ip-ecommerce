@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 import { BsCartFill } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
 
-function Footer() {
+const Footer = () => {
   const navigate = useNavigate();
 
   return (

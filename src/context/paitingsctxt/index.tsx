@@ -1,27 +1,35 @@
-import { createContext, useState, useContext } from "react";
+import {
+	createContext,
+	useState,
+	useContext,
+	FC,
+	PropsWithChildren,
+} from "react";
 import { Product } from "../../interfaces/productinfo";
-import { Outlet } from "react-router-dom";
 
 export interface PaintingContextType {
-  paintings: Product[];
-  setPaintings: Function;
+	paintings: Product[];
+	setPaintings: Function;
 }
 
-const painting = createContext({} as PaintingContextType);
+const Painting = createContext({} as PaintingContextType);
 
-export const PaintingsContextProvider = () => {
-  const [paintings, setPaintings] = useState([]);
-  return (
-    <painting.Provider value={{ paintings, setPaintings }}>
-      {<Outlet />}
-    </painting.Provider>
-  );
+export const PaintingsContextProvider: FC<PropsWithChildren> = ({
+	children,
+}) => {
+	const [paintings, setPaintings] = useState([]);
+	console.log({ paintings });
+	return (
+		<Painting.Provider value={{ paintings, setPaintings }}>
+			{children}
+		</Painting.Provider>
+	);
 };
 
 export function usePaintingsContext() {
-  const context = useContext(painting);
-  if (!context) {
-    throw new Error("Error");
-  }
-  return context;
+	const context = useContext(Painting);
+	if (!context) {
+		throw new Error("Error");
+	}
+	return context;
 }
