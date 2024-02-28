@@ -15,7 +15,6 @@ export function LogoApp() {
 
 async function getUserData() {
   try {
-    //VAMOS A LLAMAR A LA API DEL ORTO
     const data = await fetch("src/data/users.json");
     const JSONdata = await data.json();
     return JSONdata;
