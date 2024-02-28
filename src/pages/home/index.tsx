@@ -23,7 +23,6 @@ export function ProductCards() {
 
   async function getPaintingsData() {
     try {
-      //VAMOS A LLAMAR A LA API DEL ORTO
       const data = await fetch("src/data/paintings.json");
       const JSONdata = await data.json();
       paintingctxt.setPaintings(JSONdata);
