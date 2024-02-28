@@ -121,7 +121,7 @@ With all my tools installed and ready to go, let's build the project!
 
 ```
 
-### 🖼️ Painting
+### 🖼️ Paintings
 
 ```bash
 [
