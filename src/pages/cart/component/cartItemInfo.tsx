@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Product } from "../../../interfaces/productinfo";
 import { useUsersContext } from "../../../context/userctxt";
+import { IoTrashOutline } from "react-icons/io5";
 
 type Props = {
   product: Product | undefined;
@@ -31,7 +32,7 @@ function CartItemInfo({ product, count, renderPrice }: Props) {
     }
     if (loggedUserCart && product) {
       const index = loggedUserCart.findIndex((element) => {
-        element.id === product.id;
+        return element.id === product.id;
       });
       loggedUserCart.splice(index, 1);
     }
@@ -72,10 +73,7 @@ function CartItemInfo({ product, count, renderPrice }: Props) {
               </button>
 
               <button className="addremoveBtn" onClick={handleDelete}>
-                <img
-                  className="addremoveImg trash"
-                  src="src/assets/trash.webp"
-                />
+                <IoTrashOutline size={25} />
               </button>
             </div>
           </div>

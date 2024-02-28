@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import "./footer.css";
+import { FaHome } from "react-icons/fa";
+import { BsCartFill } from "react-icons/bs";
+import { GoHeartFill } from "react-icons/go";
 
 function Footer() {
   const navigate = useNavigate();
@@ -7,16 +10,13 @@ function Footer() {
   return (
     <footer>
       <button className="footerBtn" onClick={() => navigate("/home")}>
-        <img className="footerwebp" src="src/assets/home-icon.webp"></img>
+        <FaHome size={35} color="white" />
       </button>
       <button className="footerBtn">
-        <img className="footerwebp" src="src/assets/heart.webp"></img>
+        <GoHeartFill size={35} color="white" />
       </button>
       <button className="footerBtn" onClick={() => navigate("/cart")}>
-        <img
-          className="footerwebp"
-          src="src/assets/shopping-cart-filled.webp"
-        ></img>
+        <BsCartFill size={35} color="white" />
       </button>
     </footer>
   );

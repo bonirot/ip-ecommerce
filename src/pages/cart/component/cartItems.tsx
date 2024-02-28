@@ -52,8 +52,8 @@ export function CartItems() {
       })}
       {userCart.length > 0 && (
         <div className="totalPrice">
-          <p>Total:</p>
-          <p>{totalPrice} €</p>
+          <strong>Total: {totalPrice} €</strong>
+          <button className="checkoutBtn">Checkout</button>
         </div>
       )}
     </>
