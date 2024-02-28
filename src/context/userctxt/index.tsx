@@ -1,5 +1,10 @@
-import { createContext, useState, useContext } from "react";
-import { Outlet } from "react-router-dom";
+import {
+  createContext,
+  useState,
+  useContext,
+  FC,
+  PropsWithChildren,
+} from "react";
 import { User } from "../../interfaces/user";
 
 export interface UserContextType {
@@ -9,11 +14,11 @@ export interface UserContextType {
 
 export const userContext = createContext({} as UserContextType);
 
-export const UsersContextProvider = () => {
+export const UsersContextProvider: FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState({} as User);
   return (
     <userContext.Provider value={{ user, setUser }}>
-      {<Outlet />}
+      {children}
     </userContext.Provider>
   );
 };

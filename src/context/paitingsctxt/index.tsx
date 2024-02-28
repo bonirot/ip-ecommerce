@@ -1,6 +1,11 @@
-import { createContext, useState, useContext } from "react";
+import {
+  createContext,
+  useState,
+  useContext,
+  FC,
+  PropsWithChildren,
+} from "react";
 import { Product } from "../../interfaces/productinfo";
-import { Outlet } from "react-router-dom";
 
 export interface PaintingContextType {
   paintings: Product[];
@@ -9,11 +14,13 @@ export interface PaintingContextType {
 
 const painting = createContext({} as PaintingContextType);
 
-export const PaintingsContextProvider = () => {
+export const PaintingsContextProvider: FC<PropsWithChildren> = ({
+  children,
+}) => {
   const [paintings, setPaintings] = useState([]);
   return (
     <painting.Provider value={{ paintings, setPaintings }}>
-      {<Outlet />}
+      {children}
     </painting.Provider>
   );
 };

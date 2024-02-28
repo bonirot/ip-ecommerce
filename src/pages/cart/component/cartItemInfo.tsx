@@ -20,7 +20,6 @@ function CartItemInfo({ product, count, renderPrice }: Props) {
     if (loggedUserCart && product) {
       loggedUserCart.push(product);
     }
-    console.log(loggedUserCart);
     renderPrice();
   };
 
@@ -36,7 +35,6 @@ function CartItemInfo({ product, count, renderPrice }: Props) {
       });
       loggedUserCart.splice(index, 1);
     }
-    console.log(loggedUserCart);
     renderPrice();
   };
 

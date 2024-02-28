@@ -35,8 +35,6 @@ export function ProductDescription() {
       if (showPainting && userctxt) {
         userctxt.cart.push(showPainting);
       }
-      console.log(userctxt.cart);
-      console.log(count);
     }
   };
 
