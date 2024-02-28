@@ -55,7 +55,145 @@ With all my tools installed and ready to go, let's build the project!
 
 - Building the folders and file structure.
 
-- Creating my json files with the information about users and products.
+- Creating my json files with the information about users and products, wich are:
+
+### 🙂 Users
+
+```bash
+[
+  {
+    "name": "Julia Sanchis",
+    "username": "jsanchis",
+    "mail": "jusanchis@example.com",
+    "password": "quierodormir",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Dani Sanguino",
+    "username": "sanguineta",
+    "mail": "sanguineta@example.com",
+    "password": "iloveborderradius",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Maria Cidoncha",
+    "username": "cidonchat",
+    "mail": "janesmith@example.com",
+    "password": "tengohambre",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Jorge Revuelta",
+    "username": "jorgerc",
+    "mail": "jdaltonico@example.com",
+    "password": "vivazaragoza7",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Paula Wilshaw",
+    "username": "paulawil",
+    "mail": "paulawil@example.com",
+    "password": "mencantajere",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Alberto Otero",
+    "username": "albotero",
+    "mail": "aoteron@example.com",
+    "password": "ahoravoy",
+    "cart": [],
+    "whishlist": []
+  },
+  {
+    "name": "Alba Martin",
+    "username": "albam",
+    "mail": "aoteron@example.com",
+    "password": "nopuedomas",
+    "cart": [],
+    "whishlist": []
+  }
+]
+
+```
+
+### 🖼️ Painting
+
+```bash
+[
+  {
+    "id": 1,
+    "name": "Vermillon",
+    "img": "src/assets/vermillon.webp",
+    "year": 2019,
+    "author": {
+      "name": "Andrea Torres Balaguer",
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona."
+    },
+    "price": 2500
+  },
+  {
+    "id": 2,
+    "name": "Poème Jaune",
+    "img": "src/assets/jeune.webp",
+    "year": 2019,
+    "author": {
+      "name": "Andrea Torres Balaguer",
+      "authordescription": "Barcelona, 1990. Fine Arts Degree at University of Barcelona."
+    },
+    "price": 2500
+  },
+  {
+    "id": 3,
+    "name": "Sketch",
+    "img": "src/assets/sketch.webp",
+    "year": 2019,
+    "author": {
+      "name": "Nicole Rifkin",
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA."
+    },
+    "price": 1000
+  },
+  {
+    "id": 4,
+    "name": "Skies",
+    "img": "src/assets/skies.webp",
+    "year": 2019,
+    "author": {
+      "name": "Nicole Rifkin",
+      "authordescription": "Canada. BFA in Communications Design (Illustration) and an MFA in Illustration from SVA."
+    },
+    "price": 1000
+  },
+  {
+    "id": 5,
+    "name": "Diablo",
+    "img": "src/assets/diablo.webp",
+    "year": 2019,
+    "author": {
+      "name": "Mugre",
+      "authordescription": "Spain. Mid-century enthusiast graphic designer whose work centres around portraits."
+    },
+    "price": 500
+  },
+  {
+    "id": 6,
+    "name": "Ego Death",
+    "img": "src/assets/egodeath.webp",
+    "year": "2023",
+    "author": {
+      "name": "lacabezaenlasnubes",
+      "authordescription": "Spain. His work is inspired by his early fondness on surrealism and psychedelia. The 'normal' perception of things has long ceased to interest him. He firmly believes that what we perceive through our senses is only the tip of the iceberg."
+    },
+    "price": 500
+  }
+]
+
+```
 
 · 13th February 2014:
 
