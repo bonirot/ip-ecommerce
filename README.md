@@ -4,11 +4,9 @@
 
 In this projects we have to implement an e-commerce platform called Gappllery, where you can find beautiful paintings and photographies.
 
-![Gappllery Logo](src/assets/logog.png)
+![Gappllery App](src/assets/imagesReadme/capturasmovil.webp)
 
 Step 1 consisted in designing the look with Figma:
-
-![Figma Design](src/assets/imagesReadme/figma.webp)
 
 - [My Figma Design](https://www.figma.com/file/U35G4p5b1lsH6H5Gu5hXFX/Proyecto-individual?type=design&node-id=21%3A1009&mode=design&t=5UO7oWfqrxsB1cOx-1)
 
