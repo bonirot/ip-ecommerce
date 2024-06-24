@@ -15,7 +15,7 @@ export function LogoApp() {
 
 async function getUserData() {
   try {
-    const data = await fetch("src/data/users.json");
+    const data = await fetch("./users.json");
     const JSONdata = await data.json();
     return JSONdata;
   } catch (error) {

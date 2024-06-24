@@ -23,7 +23,7 @@ export function ProductCards() {
 
   async function getPaintingsData() {
     try {
-      const data = await fetch("src/data/paintings.json");
+      const data = await fetch("./paintings.json");
       const JSONdata = await data.json();
       paintingctxt.setPaintings(JSONdata);
     } catch (error) {
