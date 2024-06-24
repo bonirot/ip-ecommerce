@@ -1,6 +1,6 @@
 import "./product.css";
-import Footer from "../../components/footer";
-import { Header } from "../../components/header";
+import Footer from "../../components/Footer";
+import { Header } from "../../components/Header";
 import { usePaintingsContext } from "../../context/paitingsctxt";
 import { useParams } from "react-router-dom";
 import { useState } from "react";

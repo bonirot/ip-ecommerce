@@ -1,6 +1,6 @@
 import "./home.css";
-import { Header } from "../../components/header";
-import Footer from "../../components/footer";
+import { Header } from "../../components/Header";
+import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { usePaintingsContext } from "../../context/paitingsctxt";
 import { PaintingsInfo } from "./components/product";
