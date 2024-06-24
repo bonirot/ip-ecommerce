@@ -8,7 +8,7 @@ import { useUsersContext } from "../../context/userctxt";
 export function LogoApp() {
   return (
     <div>
-      <img className="logo" src="./src/assets/logog.png" alt="Logo Gappllery" />
+      <img className="logo" src="./logog.png" alt="Logo Gappllery" />
     </div>
   );
 }
@@ -67,11 +67,7 @@ export function SignIn() {
         <h3 className="signInTitle">Sign in</h3>
         <form className="form" onSubmit={validateForm}>
           <div className="inputdiv">
-            <img
-              className="logIco"
-              src="./src/assets/user-filled.webp"
-              alt="User icon"
-            />
+            <img className="logIco" src="./user-filled.webp" alt="User icon" />
             <input
               id="email"
               type="email"
@@ -87,11 +83,7 @@ export function SignIn() {
             />
           </div>
           <div className="inputdiv">
-            <img
-              className="logIco"
-              src="./src/assets/key.webp"
-              alt="Key icon"
-            />
+            <img className="logIco" src="./key.webp" alt="Key icon" />
             <input
               id="pass"
               type="password"
