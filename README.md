@@ -20,6 +20,10 @@ Step 3 involved installing React and React Router.
 
 With all my tools installed and ready to go, let's build the project!
 
+## Deployment with Vercel 🚀
+
+[Gappllery](https://gappllery.vercel.app)
+
 ## Extra tools used ✨
 
 - [React Hot Toast](https://react-hot-toast.com)
