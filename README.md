@@ -126,7 +126,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 1,
     "name": "Vermillon",
-    "img": "src/assets/vermillon.webp",
+    "img": "./vermillon.webp",
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
@@ -137,7 +137,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 2,
     "name": "Poème Jaune",
-    "img": "src/assets/jeune.webp",
+    "img": "./jeune.webp",
     "year": 2019,
     "author": {
       "name": "Andrea Torres Balaguer",
@@ -148,7 +148,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 3,
     "name": "Sketch",
-    "img": "src/assets/sketch.webp",
+    "img": "./sketch.webp",
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
@@ -159,7 +159,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 4,
     "name": "Skies",
-    "img": "src/assets/skies.webp",
+    "img": "./skies.webp",
     "year": 2019,
     "author": {
       "name": "Nicole Rifkin",
@@ -170,7 +170,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 5,
     "name": "Diablo",
-    "img": "src/assets/diablo.webp",
+    "img": "./diablo.webp",
     "year": 2019,
     "author": {
       "name": "Mugre",
@@ -181,7 +181,7 @@ With all my tools installed and ready to go, let's build the project!
   {
     "id": 6,
     "name": "Ego Death",
-    "img": "src/assets/egodeath.webp",
+    "img": "./egodeath.webp",
     "year": "2023",
     "author": {
       "name": "lacabezaenlasnubes",
