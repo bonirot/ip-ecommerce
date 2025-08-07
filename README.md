@@ -1,6 +1,6 @@
 `#react` `#assembler-institute-of-technology` `#master-in-software-engineering` `#ReactEcommerce` `#ReactTS` `#ReactHooks` `#CustomHooks` `#StyledComponents` `#TypeScript` `#CSS` `#Figma` `#ReactOptimization`
 
-# Individual Proyect E-Commerce 📱
+# Individual Project E-Commerce 📱
 
 In this projects we have to implement an e-commerce platform called Gappllery, where you can find beautiful paintings and photographies.
 
